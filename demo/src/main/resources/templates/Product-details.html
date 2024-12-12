@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Detail</title>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Header */
+        #header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        #header a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        #header a:hover {
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        /* Product Details */
+        #product-detail {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+
+        #product-detail img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        #product-info {
+            margin-left: 30px;
+            max-width: 500px;
+        }
+
+        #product-info h2 {
+            color: #222;
+        }
+
+        /* Price */
+        #price {
+            font-size: 1.5rem;
+            color: #e60000; /* Red color to highlight the price */
+            margin: 10px 0;
+        }
+
+        /* Size Dropdown */
+        .size-select, #review-text {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+
+        /* Review Section */
+        #review-section {
+            margin-top: 20px;
+        }
+
+        /* Shipping Instructions Message */
+        #shipping-instructions {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            color: #555;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+       /* Button styling for updates */
+    .btn {
+        display: inline-block;
+        background-color: #050d16;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 15px;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+     /* Submit button */
+    .submit-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #222;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+
+        button:hover {
+            background-color: #444;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Button styling */
+        .btn-container {
+            margin-top: 30px;
+        }
+
+        .btn-container a {
+            text-decoration: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            background-color: #111312;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 0 10px;
+        }
+
+        .btn-container a:hover {
+            background-color: #0e0f0e;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div id="header">
+    <a href="/">Home</a>
+    <a href="/login">Sign In</a>
+    <a href="/signup">Sign Up</a>
+</div>
+
+<!-- Product Detail Section -->
+
+
+<div id="product-detail">
+    <img src="#" alt="Product Name" data-th-src="${product.imageUrl}">
+
+    <div id="product-info">
+        <h2 data-th-text="${product.productName}"></h2>
+        <p data-th-text="${product.description}"></p>
+
+        <p>Color: <span data-th-text="${product.color}"></span></p>
+
+        <p>Category: <span data-th-text="${product.category}"></span></p>
+
+        <p>Quantity: <span data-th-text="${product.quantity}"></span></p>
+
+        <!-- Price -->
+        <p>Price: $<span data-th-text="${product.price}"></span></p>
+
+
+       <p> Select Sizes:</p>
+        <div>
+        <select  class="size-select">
+
+          <option data-th-each="size : ${sizeList}"  data-th-text=" ${size} " ></option>
+
+        </select>
+        </div>
+
+
+
+
+        <!-- Shipping Instructions -->
+        <div id="shipping-instructions">
+            <p><strong>Shipping Instructions:</strong> All orders will be shipped within 3-5 business days. Shipping delays may occur during holidays.</p>
+        </div>
+
+
+
+        <!-- Button -->
+        <div class="btn-container">
+            <a href="/orderconfirmation">Buy Now</a>
+
+        </div>
+
+
+
+
+    </div>
+</div>
+</div>
+
+<!-- Footer -->
+<div id="footer">
+     2024 Nothin' But Net
+</div>
+
+</body>
+</html>

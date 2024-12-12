@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Header and Navigation */
+        #header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        #header a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        #header a:hover {
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        /* Navigation Bar with Categories */
+        #nav-bar {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #nav-bar a {
+            text-decoration: none;
+            color: black;
+            margin: 0 10px;
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #nav-bar a:hover {
+            background-color: #222;
+            color: white;
+        }
+
+        /* Search Bar */
+        #search-bar {
+            width: 60%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Banner Section */
+        #banner {
+            width: 100%;
+            height: 300px;
+            background-image: url('https://media1.giphy.com/media/d5qdJ4yuQFgmoQrCIr/giphy.gif'); /* Background image for the banner */
+            background-size: cover; /* Makes sure the image covers the entire area */
+            background-position: center; /* Centers the image */
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+            line-height: 300px; /* Vertically centers the text */
+            position: relative; /* To ensure the text stays on top of the image */
+        }
+
+        /* Category Boxes Grid */
+        #categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns per row */
+            grid-gap: 20px; /* Gap between boxes */
+            margin: 30px 0;
+        }
+
+        .category-box {
+            height: 250px;
+            background-color: #222;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background-size: cover; /* Ensures image covers the entire box */
+            background-position: center; /* Centers the image */
+        }
+
+        /* Styling for the category label and "Shop Here" text */
+        .category-box .category-label {
+            position: absolute;
+            top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .category-box span {
+            position: absolute;
+            bottom: 20px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Hover effect */
+        .category-box:hover {
+            background-color: #444; /* Slight background color change on hover */
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div id="header">
+    <a href="/login">Sign In</a>
+    <a href="/signup">Sign Up</a>
+</div>
+
+<!-- Navigation Bar -->
+<div id="nav-bar">
+    <a href="/products/mens">Men's</a>
+    <a href="/products/womens">Women's</a>
+    <a href="/products/kids">Kid's</a>
+    <a href="/products/retro">Retro</a>
+    <a href="/helpcenter">Help</a>
+</div>
+
+<form action="/products/search" method="get">
+<input type="text" id="search-bar" name = "searchStr" placeholder="Search for products...">
+</form>
+
+<!-- Banner Section -->
+<div id="banner">
+    Welcome to Nothin' But Net
+</div>
+
+<!-- Category Boxes -->
+<div id="categories">
+    <a href="/products/mens">
+        <div class="category-box" style="background-image: url('https://wallpaperaccess.com/full/5873642.jpg');">
+            <div class="category-label">Men's</div>
+            <span>Shop Here</span>
+        </div>
+    </a>
+
+    <a href="/products/womens">
+        <div class="category-box" style="background-image: url('https://i.pinimg.com/736x/48/b2/80/48b28053cbcfe9b83d2240e0ecf8e0b6.jpg');">
+            <div class="category-label">Women's</div>
+            <span>Shop Here</span>
+        </div>
+    </a>
+
+    <a href="/products/kids">
+        <div class="category-box" style="background-image: url('http://www.welloffman.com/BasketBallChildren.jpg');">
+            <div class="category-label">Kids</div>
+            <span>Shop Here</span>
+        </div>
+    </a>
+
+    <a href="/products/retro">
+        <div class="category-box" style="background-image: url('https://www.sportscasting.com/wp-content/uploads/2021/04/Dennis-Rodman-Athlete.jpg?w=1024&h=861');">
+            <div class="category-label">Retro</div>
+            <span>Shop Here</span>
+        </div>
+    </a>
+</div>
+
+<!-- Footer -->
+<div id="footer">
+    2024 Nothin' But Net
+</div>
+
+</body>
+</html>
+

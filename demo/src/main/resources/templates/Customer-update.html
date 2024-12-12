@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Sign Up Page</title>
+  <style>
+    /* Dark background for the page */
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #333; /* Dark background */
+        color: white; /* Light text for contrast */
+        font-family: 'Times New Roman', Times, serif; /* Times New Roman font */
+    }
+
+    /* Header Section */
+    #Banner {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Navigation bar style */
+    nav {
+        background-color: #222; /* Dark background for the navbar */
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 15px 20px;
+        margin: 0 10px;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+    }
+
+    nav a:hover {
+        background-color: #271ad4;
+        border-radius: 5px;
+    }
+
+    /* Center the form container */
+    #SignUpPageContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 10px; /* Add some padding around the form */
+        min-height: calc(100vh - 200px); /* Adjusting for header, navbar, and margins */
+    }
+
+    /* Form styling */
+    #SignUpForm {
+        background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 450px; /* Slightly smaller width */
+        margin-top: 20px; /* Add margin to keep some space above */
+    }
+
+    /* Form input fields */
+    input[type="text"], input[type="email"], input[type="tel"], input[type="password"], select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        background-color: #444;
+        color: white;
+    }
+
+    /* Submit button */
+    .submit-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #222;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    /* Heading styling */
+    h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+    }
+
+    /* Content inside the sign-up box */
+    #SignUpPageParagraph {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #ccc;
+        margin-bottom: 30px; /* Ensure some space before the form */
+    }
+  </style>
+</head>
+<body>
+
+
+<div id="Banner">
+  <header>
+    <h1>NOTHIN' BUT NET</h1>
+  </header>
+</div>
+
+<!-- Navigation Menu -->
+<nav>
+  <a href="home.html">Home</a>
+  <a href="mens.html">Men's</a>
+  <a href="womens.html">Women's</a>
+  <a href="retro.html">Retro</a>
+  <a href="help.html">Help</a>
+</nav>
+
+<hr>
+
+<!-- Introduction Text -->
+<div id="SignUpPageParagraph">
+  <p>
+    Welcome to Nothin' But Net! We’re excited to have you join our community of basketball enthusiasts.
+    By signing up, you'll get access to the latest gear, exclusive offers, and much more!
+    Fill out the form below to get started and be part of the action.
+  </p>
+</div>
+
+<hr>
+
+<!-- Form Section -->
+<div id="SignUpPageContainer">
+  <div id="SignUpForm">
+    <fieldset id="SignUpField" style="border: none; margin: 0;">
+      <legend style="color: white;">Update</legend>
+      <form action="#" th:action="@{/customers/update/{customerId}(customerId=${customer.customerId})}" method="post">
+        <!-- Name Field -->
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" data-th-value="${customer.name}"><br>
+
+        <!-- Email Field -->
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" data-th-value="${customer.email}"><br>
+
+        <!-- Phone Field -->
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" data-th-value="${customer.phone}"><br>
+
+        <!-- Address Field -->
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" data-th-value="${customer.address}" ><br>
+
+        <!-- Gender Field -->
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender" data-th-value="${customer.gender}">
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select><br>
+
+        <!-- Username Field -->
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" data-th-value="${customer.username}"><br>
+
+
+        <!-- Password Field -->
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" data-th-value="${customer.password}"><br>
+
+        <!-- State Field -->
+        <label for="state">State:</label><br>
+        <input type="text" id="state" name="state" data-th-value="${customer.state}"><br>
+
+        <!-- Zipcode Field -->
+        <label for="zipcode">Zip Code:</label><br>
+        <input type="text" id="zipcode" name="zipcode" data-th-value="${customer.zipcode}"><br>
+
+        <!-- City Field -->
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city" data-th-value="${customer.city}"><br>
+
+        <label for="payment">Payment Type:</label><br>
+        <input type="text" id="payment" name="payment" data-th-value="${customer.payment}"><br>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </fieldset>
+  </div>
+</div>
+
+</body>
+</html>

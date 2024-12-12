@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Help Center </title>
+    <style>
+        /* CSS for layout and styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white; /* White background */
+            color: black; /* Black text */
+        }
+
+        header {
+            background-color: black; /* Black header background */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: black; /* Black background for navbar */
+            padding: 12px;
+        }
+
+        .navbar a {
+            color: white; /* White text for links */
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: #2a6d8f;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .search-container input[type="text"] {
+            padding: 12px;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-container button {
+            padding: 12px 20px;
+            border-radius: 5px;
+            background-color: black; /* Black button background */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #2a6d8f;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .categories .category {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 22%;
+            text-align: center;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid black; /* Border added to categories */
+        }
+
+        .categories .category:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-5px);
+        }
+
+        .categories .category h3 {
+            margin: 0;
+            font-size: 20px;
+            color: black; /* Black text for category titles */
+        }
+
+        .categories .category p {
+            color: black; /* Black text for category descriptions */
+        }
+
+        .faq-section {
+            padding: 20px;
+            background-color: white;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 1000px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 28px;
+            color: black; /* Black text for FAQ heading */
+        }
+
+        /* Styling the FAQ details and summary elements */
+        details {
+            margin-bottom: 20px;
+        }
+
+        summary {
+            font-size: 18px;
+            cursor: pointer;
+            font-weight: bold;
+            color: black;
+        }
+
+        p {
+            margin-top: 10px;
+            color: black;
+        }
+
+        footer {
+            text-align: center;
+            background-color: black; /* Black footer background */
+            color: white; /* White text in footer */
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Nothin' But Net - Help Center</h1>
+</header>
+
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/customers/profile">My Account</a>
+    <a href="/contact">Contact Us</a>
+</div>
+
+<div class="categories">
+    <div class="category">
+        <h3>Basketballs</h3>
+        <p>Find the perfect basketball for your game. Whatever size you are looking for, we got you covered.</p>
+    </div>
+    <div class="category">
+        <h3>Basketball Shoes</h3>
+        <p>Shop the latest sneakers from top brands like Nike, Adidas, and Under Armour for the best grip and support.</p>
+    </div>
+    <div class="category">
+        <h3>Apparel</h3>
+        <p>Browse our collection of jerseys, shorts, and accessories to help you look and play your best.</p>
+    </div>
+    <div class="category">
+        <h3>Shipping & Returns</h3>
+        <p>Need help with shipping or returns? Find all the info you need about our policies and processes.</p>
+    </div>
+</div>
+
+<div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+        <summary>How do I see my previous order?</summary>
+        <p>To see your previous orders, log into your account and go to the 'Order History' section. </p>
+    </details>
+
+    <details>
+        <summary>Can I exchange my basketball shoes for a different size?</summary>
+        <p>Yes, exchanges are possible within 30 days of purchase. The shoes need to be in decent condition in order for them to be returned.</p>
+    </details>
+
+    <details>
+        <summary>Do you offer free shipping?</summary>
+        <p>We offer free standard shipping on all of our orders. Don't worry, we got you covered.</p>
+    </details>
+
+    <details>
+        <summary>What payment methods do you accept?</summary>
+        <p>We accept all major credit cards, PayPal, and Apple Pay for a secure checkout experience.</p>
+    </details>
+</div>
+
+
+
+</body>
+
+</html>

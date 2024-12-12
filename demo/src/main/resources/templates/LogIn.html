@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Login Page</title>
+    <style>
+        /* Dark background for the page */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #333; /* Dark background */
+            color: white; /* Light text for contrast */
+            font-family: 'Times New Roman', Times, serif; /* Times New Roman font */
+        }
+
+        /* Header Section */
+        #Banner {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation bar style */
+        nav {
+            background-color: #222; /* Dark background for the navbar */
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            margin: 0 10px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        /* Center the form container */
+        #LoginPageContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 180px); /* Adjusting for header, navbar, and margins */
+        }
+
+        /* Login form styling */
+        #LoginForm {
+            background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Form input fields */
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            background-color: #444;
+            color: white;
+            font-family: 'Times New Roman', Times, serif; /* Apply Times New Roman to inputs */
+        }
+
+        /* Submit button */
+        .submit-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+
+        /* Heading styling */
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+
+        /* Content inside the login box */
+        #LoginPageParagraph {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="Banner">
+    <header>
+        <h1>NOTHIN' BUT NET</h1>
+    </header>
+</div>
+
+<!-- Navigation Menu -->
+<nav>
+    <a href="/">Home</a>
+    <a href="/products/mens">Men's</a>
+    <a href="/products/womens">Women's</a>
+    <a href="/products/retro">Retro</a>
+    <a href="/products/kids">Kid's</a>
+    <a href="/helpcenter">Help</a>
+</nav>
+
+<hr>
+
+<!-- Introduction Text -->
+<div id="LoginPageParagraph">
+    <p>
+        Welcome back to Nothin' But Net! Sign in to access your personalized recommendations, exclusive offers, and much more.
+    </p>
+</div>
+
+<hr>
+
+<!-- Login Form Section -->
+<div id="LoginPageContainer">
+    <div id="LoginForm">
+        <fieldset id="LoginField" style="border: none; margin: 0;">
+            <legend style="color: white;">Login</legend>
+
+
+            <form action="/login" method = "post">
+
+                <!-- Username Field -->
+                <label for="username" style="color: white;">Username:</label><br>
+                <input type="text" id="username" name="username" required><br>
+
+                <!-- Password Field -->
+                <label for="password" style="color: white;">Password:</label><br>
+                <input type="password" id="password" name="password" required><br>
+
+                <!-- Submit Button -->
+                <button type ="submit" class="submit-btn">Login</button>
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+
+</body>
+</html>
+

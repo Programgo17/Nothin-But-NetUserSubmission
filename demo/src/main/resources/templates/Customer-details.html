@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>My Account</title>
+  <style>
+    /* Set the background color to white and text color to black */
+    body {
+        background-color: white;
+        color: black;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Container for the content */
+    .container {
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+    }
+
+    /* Header styling */
+    h1 {
+        color: black;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    /* Styling for each section heading */
+    h2 {
+        color: #333;
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+    /* Styling for paragraphs */
+    p {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    /* Span styling for dynamic content */
+    span {
+        font-weight: bold;
+    }
+
+    /* Link styling */
+    a {
+        color: white;
+        background-color: black;
+        text-decoration: none;
+        padding: 5px 15px;
+        border-radius: 5px;
+    }
+
+    /* Hover effect for links */
+    a:hover {
+        background-color: darkgray;
+    }
+
+    /* Table styling for order history */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    table th, table td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    table th {
+        background-color: #f2f2f2;
+    }
+
+    /* Button styling for updates */
+    .btn {
+        display: inline-block;
+        background-color: #050d16;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 15px;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Hello, <span data-th-text="${customer.name}"></span>!</h1>
+
+  <!-- Account Overview Section -->
+  <h2>Account Overview</h2>
+
+
+  <p>Email: <span data-th-text="${customer.email}"></span></p>
+  <p>Phone Number: <span data-th-text="${customer.phone}"></span></p>
+  <p>Username: <span data-th-text="${customer.username}"></span></p>
+  <p>Password: <span data-th-text="${customer.password}"></span></p>
+  <p>Address: <span data-th-text="${customer.address}"></span></p>
+  <p>Gender: <span data-th-text="${customer.gender}"></span></p>
+  <p> Username: <span data-th-text="${customer.username}"></span></p>
+  <p>City: <span data-th-text="${customer.city}"></span></p>
+  <p>Zipcode: <span data-th-text="${customer.zipcode}"></span></p>
+  <p>State: <span data-th-text="${customer.state}"></span></p>
+  <p>Payment type: <span data-th-text="${customer.payment}"></span></p>
+
+  <a data-th-href="@{/customers/update/{customerId}(customerId=${customer.customerId})}" class="btn">Edit Profile</a>
+
+
+
+
+
+  <h2>Access</h2>
+
+
+  <a href="/helpcenter">Help</a>
+
+
+
+  <div style="margin-top: 30px;">
+    <form action="/logout" method="post">
+     <button class="btn" type="submit" style="background-color: #dc3545;">Log Out</button>
+    </form>
+
+  </div>
+</div>
+</body>
+</html>
